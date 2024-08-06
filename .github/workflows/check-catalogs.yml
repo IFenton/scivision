@@ -28,7 +28,8 @@ jobs:
           path: check_datasets.js
       - name: Update check_datasets.js in frontend repository
         run: |
-          mv -f check_datasets.js frontend/src/consts/check_datasets.js
+          git checkout -b IFenton-workflow
+          mv -f check_datasets.js constants/check_datasets.js
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git pull
