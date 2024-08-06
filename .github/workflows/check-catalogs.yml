@@ -1,13 +1,9 @@
 name: Auto-update check_datasets.js
 on:
   workflow_dispatch:
-    branches:
-      - IFenton-workflow
   schedule:
     - cron:  '52 9 * * *'
-      branches:
-        - IFenton-workflow
-  
+      
 jobs:
   check-catalogs:
     name: Check catalogs and create check_datasets.js file
@@ -16,6 +12,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: IFenton-workflow
       - uses: actions/setup-python@v4
         with:
           python-version: '3.10'
