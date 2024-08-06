@@ -4,7 +4,7 @@ on:
     branches:
       - IFenton-workflow
   schedule:
-    - cron:  '38 10 * * *'
+    - cron:  '52 9 * * *'
       branches:
         - IFenton-workflow
   
