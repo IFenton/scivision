@@ -1,8 +1,12 @@
 name: Auto-update check_datasets.js
 on:
   workflow_dispatch:
+    branches:
+      - IFenton-workflow
   schedule:
     - cron:  '18 3 * * *'
+      branches:
+        - IFenton-workflow
   
 jobs:
   check-catalogs:
@@ -28,7 +32,6 @@ jobs:
           path: check_datasets.js
       - name: Update check_datasets.js in frontend repository
         run: |
-          # git checkout -b IFenton-workflow
           mv -f check_datasets.js constants/check_datasets.js
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
