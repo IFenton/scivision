@@ -32,7 +32,7 @@ jobs:
           mv -f check_datasets.js constants/check_datasets.js
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git pull
+          git pull origin IFenton-workflow
           git add .
           git commit -m "auto-update via GH Action"
-          git push
+          git push origin IFenton-workflow
